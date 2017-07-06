@@ -1,0 +1,362 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html,body{
+    height: 100%;
+    background: #ececec;
+}
+.mask{position: fixed;top: 0;right: 0;bottom: 0;left: 0; z-index: 1000; background-color: #2F2F2F}
+.clearfix:after{
+    content:'';
+    display:block;
+    clear: both;
+}
+.wrap{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+
+}
+.wrap header{
+    width: 100%;
+    height:72px;
+    background: #FFFFFF;
+}
+.header-left{
+    float: left;
+    margin-left: 24px;
+    margin-top: 20px;
+    align-items: center;
+}
+.header-left img{
+    display: inline-block;
+    vertical-align:middle;
+    position: relative;
+    bottom: 2px;
+}
+.header-left .header-title{
+    font-size: 13px;
+    color: #000000;
+    font-family: PingFangSC-Regular;
+}
+.header-right{
+    float: right;
+}
+.header-right span{
+    display: block;
+    float: left;
+    width: 110px;
+    height: 18px;
+    line-height: 18px;
+    font-size: 13px;
+    color: #000000;
+    font-family: PingFangSC-Regular;
+    margin-top: 29px;
+    margin-right: 24px;
+}
+.header-right span:first-child{
+    margin-right: 16px;
+}
+.header-right #exit{
+    float: left;
+    display: block;
+    color: #1976D2;
+    font-size: 13px;
+    line-height: 18px;
+    width: 27px;
+    height: 18px;
+    margin-top: 29px;
+    margin-right: 32px;
+}
+/*侧边栏*/
+.left{
+    float: left;
+    width: 176px;
+    /*height: 738px;!*______*!*/
+    background:#333333;
+    /*height:738px\9\0;*/
+    height: calc(100% - 72px);
+}
+.left-task,.left-review{
+    position: relative;
+    display: block;
+    width: 176px;
+    height: 37px;
+    text-align: center;
+    text-decoration: none;
+    color:#ffffff;
+    font-size: 13px;
+    padding-top:19px;
+}
+.left-task:before{
+    width: 32px;
+    height: 32px;
+    content: '';
+    background: url("../img/icon/task_icon.png") no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    left: 24px;
+    top: 12px;
+}
+.left-review:before{
+    width: 32px;
+    height: 32px;
+    content: '';
+    background: url("../img/icon/review_icon.png") no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    left: 24px;
+    top: 12px;
+
+}
+.selected{
+    background: #2DB7F5;
+}
+/*右侧主题*/
+.right{
+    float: left;
+    width: calc(100% - 176px);
+    /*//height: 738px;*/
+    position: relative;
+    height: calc(100% - 72px);
+
+}
+.bread{
+    width: 300px;
+}
+#breadTaskList{
+    display: inline-block;
+    margin-left: 16px;
+    margin-top: 11px;
+    width:80px;
+    height: 18px;
+    line-height: 18px;
+    font-size: 13px;
+    color: #000000;
+    text-decoration: none;
+    font-family: PingFangSC-Regular;
+}
+
+#breadTaskList:hover{
+    cursor: pointer;
+}
+#breadTaskList span{
+    margin-left: 7px;
+    color: #cccccc;
+}
+select{
+    border: none;
+    font-size: 15px;
+    padding-left: 3px;
+    background: #ECECEC;
+    outline:none;
+}
+.select-area{
+    width: 380px;
+    height: 56px;
+    margin-left: 16px;
+    margin-top: 13px;
+    float: left;
+}
+.select-area div{
+    float: left;
+    text-align: center;
+    height: 32px;
+    border-right: 1px solid rgba(0,0,0,0.12);
+}
+.select-area div:last-child{
+    border:none
+}
+.select-area .task-state{
+    width: 90px;
+    height: 32px;
+    margin-right: 25px;
+}
+.select-area .device-type{
+    width: 90px;
+    height: 32px;
+    margin-right: 25px;
+    float: left;
+    margin-left: 25px;
+
+}
+.select-area .belong-user{
+    width: 90px;
+    height: 32px;
+
+    margin-left: 25px;
+}
+.select-area img{
+    vertical-align: middle;
+}
+.search-area{
+    position: absolute;
+    top:16px;
+    right:0px;
+}
+.search-input{
+    font-size: 16px;
+    position: absolute;
+    border: none;
+    outline: none;
+    width: 258px;
+    height:48px;
+    border-radius: 2px;
+    right: 112px;
+    background: #FAFAFA;
+    padding-left: 10px;
+}
+
+.search-btn{
+    position: absolute;
+    border: none;
+    outline: none;
+    right:16px;
+    top:2px;
+    width: 80px;
+    height:40px;
+    background: #2DB7F5;
+    font-family: PingFangSC-Regular;
+    font-size: 13px;
+    color: #FFFFFF;
+    border-radius: 2px ;
+}
+.radio {
+    width: 280px;
+    height: 20px;
+    position: absolute;
+    top: 70px;
+    right: 90px;
+}
+.radio span{
+    opacity: 1;
+}
+.radio span i{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #010101;
+    border-radius: 10px;
+    vertical-align: middle;
+    margin-right: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+    color: #212121;
+    margin-bottom: 3px;
+}
+
+.radio span .chooseBg{
+    background: url(../img/green_circle.png) no-repeat;
+    background-size: 100%;
+    border:none;
+}
+/*taskDetail界面*/
+.task-detail{
+    margin: 0 auto;
+    background: white;
+    height: 100%;
+}
+
+
+.add-task{
+    display: block;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    width: 56px;
+    height: 56px;
+    background: #009688;
+    box-shadow: 0 0 6px 0 rgba(0,0,0,0.12), 0 6px 6px 0 rgba(0,0,0,0.24);
+    border-radius: 28px;
+    text-align: center;
+    color: white;
+    line-height: 50px;
+    font-size: 28px;
+
+    position: absolute;
+    right: 400px;
+    top: 20px;
+    border: none;
+}
+ul{
+    list-style: none;
+}
+#taskListUl li{
+    width: 100%;
+    height: 90px;
+    border-bottom: 1px solid #ececec;
+    position: relative;
+}
+#taskListUl li .task-list-header{
+    width: 100%;
+    height: 50px;
+    font-family: PingFangSC-Regular;
+    font-size: 15px;
+    color: rgba(0,0,0,0.87);
+}
+#taskListUl li .id {
+    float: left;
+    margin-left: 16px;
+    margin-top: 26px;
+}
+#taskListUl li .title {
+
+    float: left;
+    margin-top: 26px;
+    margin-left: 10px;
+}
+#taskListUl li .copy{
+    float: left;
+    margin-top: 28px;
+    margin-left: 10px;
+    text-decoration: none;
+    color: #2DB7F5;
+    font-size: 13px;
+}
+#taskListUl li .task-list-detail{
+    font-family: PingFangSC-Regular;
+    color: rgba(0,0,0,0.54);
+    line-height: 18px;
+    font-size: 13px;
+    width: auto;
+    position: absolute;
+    top: 60px;
+    left: 10px;
+
+}
+.task-list-detail span{
+    margin-right: 20px;
+}
+.task-list-button a{
+    display: block;
+    text-decoration: none;
+    width: 80px;
+    height: 40px;
+    color: #303030;
+    position: absolute;
+    border: 1px solid #c6c6c6;
+    border-radius: 3px;
+    text-align: center;
+    line-height: 40px;
+    top:30px;
+}
+.task-list-button .first-button{
+    right:120px;
+}
+.task-list-button .first-button:hover{
+    cursor: pointer;
+}
+.task-list-button .second-button{
+
+    right: 20px;
+}
+.task-list-button .second-button:hover{
+
+    cursor: pointer;
+}
+.pagination-index ul li{
+    float: left;
+    margin-right: 8px;
+}

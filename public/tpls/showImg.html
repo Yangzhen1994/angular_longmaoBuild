@@ -1,0 +1,20 @@
+<link rel="stylesheet" href="./css/showImg.css">
+<div class="show-img" style="height:auto;margin-top:5px;margin-left: 8px;margin-bottom: 10px;position: relative" >
+    <img ng-src="{{images}}" alt="" class="step-img" ng-show="images" id="{{'step'+stepIndex+'Img'+$index}}">
+    <div id="{{'stepContainer'+stepIndex+'Img'+$index}}"></div>
+    <div id="{{'preview'+stepIndex+$index}}" style="    display: block;
+    position: absolute;
+    top: 0;
+    left: 93px;
+    width: 288px;
+    height: 178px;
+    z-index: 1;
+    pointer-events: none"></div>
+    <img src="./img/icon/delete_circle.png" alt="" style="
+        position: absolute;
+    top: -15px;
+    right: -10px;
+    z-index: 4;"
+         id="{{'delete'+stepIndex+$index}}"
+    >
+</div>

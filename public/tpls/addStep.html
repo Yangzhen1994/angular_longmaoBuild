@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="./css/newStep.css">
+<link rel="stylesheet" href="./css/upload.css">
+<div class="new-step">
+    <div class="bread" >
+        <a ui-sref="taskList" id="breadNewStep">任务列表<span>/</span></a>
+        <a href="javascript:;" id="breadNewStepMessage">任务步骤</a>
+    </div>
+    <div class="step-module">
+        <ul class="step-module-ul">
+            <li ng-repeat="stepItem in stepItems" id="{{'stepItem'+$index}}" style="position: relative">
+                <div ng-show="stepItem.showValue==1">
+                    <step-module></step-module>
+                </div>
+
+            </li>
+
+        </ul>
+    </div>
+    <div class="btn-add-step">
+        <a ng-click="addStepModule(stepCount+1)">+</a>
+        <div>添加一个步骤</div>
+    </div>
+    <div class="add-step-footer">
+        <div class="ad-footer-center">
+            <a href="" class="as-pre-page" ng-click="asprePage()">上一项</a>
+            <a href="" class="as-save-task" ng-click="assaveTask()">保存任务</a>
+        </div>
+    </div>
+</div>
+  

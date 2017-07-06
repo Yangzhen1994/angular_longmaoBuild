@@ -1,0 +1,187 @@
+/*审核界面*/
+.progress{z-index: 2000}
+.mask{position: fixed;top: 0;right: 0;bottom: 0;left: 0; z-index: 1000; background-color: #2F2F2F}
+.review{
+    height:100%;
+    background: #ececec;
+}
+.search-Input{
+    top:4px;
+    right: 110px;
+    font-size: 16px;
+    padding-left:10px;
+}
+.review-search-area{
+    position: absolute;
+    top:11px;
+    right:14px;
+    width: 380px;
+    height: 50px;
+}
+
+.search-btn-review{
+    border-radius:2px;
+    position: absolute;
+    border: none;
+    outline: none;
+    width: 93px;
+    height: 36px;
+    background: #009688;
+    color:#FFFFFF;
+    font-size: 14px;
+    line-height: 20px;
+    font-family: PingFangSC-Regular;
+    letter-spacing:0.5px;
+    right: 5px;
+    top:10px;
+}
+.review-radio{
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #212121;
+    position: absolute;
+    right: 388px;
+    top:30px;
+}
+.review-radio span{
+    opacity: 1;
+}
+.review-radio span i{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #010101;
+    border-radius: 10px;
+    vertical-align: middle;
+    margin-right: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+    color: #212121;
+    margin-bottom: 3px;
+}
+.review-radio span .chooseBg{
+    background: url(../img/green_circle.png) no-repeat;
+    background-size: 100%;
+    border:none;
+}
+.detail-footer{
+    width: 450px;
+    margin-left: 14px;
+    /* position: absolute; */
+    margin-top: 30px;
+}
+#exportSubTime{
+    position: absolute;
+    right: 650px;
+    top: 30px;
+}
+#exportSubTime input{
+    border: none;
+    width: 150px;
+    height: 18px;
+    border-radius: 5px;
+    margin-left: -50px;
+    font-family: PingFangSC-Regular;
+    font-size: 13px;
+    color: rgba(0,0,0,0.87);
+    line-height: 30px;
+    background: #ececec;
+    background-image: url(../img/triangle.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+.review-detail{
+
+    /*height: 658px;*//*______*/
+    margin: 0 auto;
+    background: white;
+    font-family: PingFangSC-Regular;
+    font-size: 13px;
+    color: rgba(0,0,0,0.54);
+    line-height: 18px;
+    width:100%;
+    height:calc(100% - 84px);
+    overflow-y: auto
+}
+#reviewUl li{
+    width: 100%;
+    height: 90px;
+    border-bottom: 1px solid #ececec;
+    position: relative;
+}
+#reviewUl li .export-state{
+    font-size: 13px;
+    position: absolute;
+    left: 210px;
+}
+#reviewUl li .review-header{
+    width: 100%;
+    height: 21px;
+    font-family: PingFangSC-Regular;
+    font-size: 15px;
+    color: rgba(0,0,0,0.87);
+}
+#reviewUl li .id {
+    float: left;
+    margin-left: 16px;
+    margin-top: 26px;
+}
+#reviewUl li .title {
+
+    float: left;
+    margin-top: 26px;
+    margin-left: 10px;
+}
+#reviewUl li .review-detail-detail{
+    color:#303030;
+    font-size: 13px;
+    width: auto;
+    position: absolute;
+    top: 60px;
+    left: 10px;
+    line-height: 18px;
+    font-family: PingFangSC-Regular;
+    color: rgba(0,0,0,0.54);
+}
+.review-detail-detail span{
+    margin-right: 30px;
+}
+.review-button a{
+    display: block;
+    text-decoration: none;
+    width: 80px;
+    height: 40px;
+    color: #303030;
+    position: absolute;
+    border: 1px solid #c6c6c6;
+    border-radius: 3px;
+    text-align: center;
+    line-height: 40px;
+    top:30px;
+    right:25px;
+}
+.review-button .first-button{
+    font-size: 13px;
+    background: #2DB7F5;
+    color:#FFFFFF;
+}
+.review-button a:hover{
+    cursor: pointer;
+}
+.import, .export{
+    color:#2DB7F5;
+    font-size: 13px;
+    font-family: PingFangSC-Regular;
+    float: left;
+    margin-top: 28px;
+    margin-left: 12px;
+}
+.export{
+    margin-left: 8px;
+}
+.import label:hover{
+     cursor: pointer;
+}
+.export:hover{
+    cursor: pointer;
+}

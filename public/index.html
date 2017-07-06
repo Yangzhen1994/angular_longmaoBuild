@@ -1,0 +1,67 @@
+<html><!DOCTYPE html>
+<head>
+    <title>龙猫特工后台管理</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="This is my page">
+    <link type="image/x-icon" href="./img/facvicon.png" rel="shortcut icon">
+    <!--导入css-->
+
+    <link rel="stylesheet" href="./css/laydate.css">
+
+    <!-- 导入JS -->
+
+
+    <script type="text/javascript" src="./js/framework/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="./js/framework/jquery-ui.js"></script>
+    <script type="text/javascript" src="./js/framework/laydate.js"></script>
+    <!--<script type="text/javascript" src="js/framework/jquery.cookie.js"></script>-->
+
+    <script type="text/javascript" src="js/framework/qiniu.js"></script>
+    <script type="text/javascript" src="js/framework/plupload.full.min.js"></script>
+
+
+    <style>
+    </style>
+    <link rel="stylesheet" href="./css/base.css">
+</head>
+
+<body>
+<div class="wrap">
+    <header>
+        <div class="header-left">
+            <img src="img/header_icon.png" alt="">
+            <span class="header-title">龙猫特工后台管理</span>
+        </div>
+    </header>
+    <div class="clearfix">
+        <div class="left" id="leftHeight" ng-controller="headerCtrl">
+            <a ui-sref="taskList" style="display: block;color: gainsboro" class="left-task"
+               ng-class="{selected:isBlue == 1}" ng-click="changeBlue(1)">任务</a>
+            <a ui-sref="reviewList" style="display: block;color: gainsboro" class="left-review"
+               ng-class="{selected:isBlue == 2}" ng-click="changeBlue(2)">审核</a>
+        </div>
+
+        <div class="right">
+            <div ui-view>
+
+            </div> <!-- 父View -->
+        </div>
+
+    </div>
+    <!--<img id="indexProgressImage" class="progress" style="display:none;position:fixed;
+    top: 40%;
+    left: 45%"
+     alt="" src="./img/loading.gif"/>
+    <div id="indexMaskOfProgressImage" class="mask" style="opacity: 0.1"></div>-->
+</div>
+
+</body>
+
+<script type="text/javascript" src="js/require.js" data-main="js/main"></script>
+
+
+</html>

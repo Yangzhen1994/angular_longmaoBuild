@@ -1,0 +1,72 @@
+.pos-proof{
+    width: 282px;
+    height: 116px;
+
+    position: relative;
+    margin-left: 18px;
+    margin-bottom: 10px
+}
+.pos-proof img:first-child{
+    width: 100%;
+}
+.pos-proof-del-img{
+    clear: both;
+    position: absolute;
+    top:-8px;
+    right: 5px;
+    width:32px;
+}
+.posEdit{
+    position: absolute;
+    top:0;
+    left:300px;
+    width: 282px;
+    height: 114px;
+    border-radius: 5px;
+    background: white;
+    visibility: hidden;
+}
+.editArea{
+    transform: scale(0.85);
+    margin-left: -28px;
+}
+.posEdit #posEdit_label{
+    display: inline-block;
+    font-size: 16px;
+    color: black;
+    margin-top: 12px;
+    margin-left: 15px;
+
+}
+
+.posN {
+    text-align: right;
+    border: none;
+    outline: none;
+    width: 32px;
+}
+.posE{
+    text-align: right;
+    border: none;
+    outline: none;
+    width: 32px;
+}
+.posSub{
+    width: 75px;
+    height: 31px;
+    margin: 0 auto;
+    margin-top: 13px;
+}
+.posSub img{
+    width: 100%;
+}
+.posBottom{
+    width: 212px;
+    height: 14px;
+    margin: 0 auto;
+    margin-top: 14px;
+}
+.posBottom img{
+    width: 100%;
+}
+

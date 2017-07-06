@@ -1,0 +1,122 @@
+<link rel="stylesheet" href="./css/newTask.css">
+<div class="new-task" style="height: auto">
+    <div class="bread">
+        <a ui-sref="taskList" id="breadNewTask">任务列表<span>/</span></a>
+        <a ui-sref="addTask" id="breadNewTaskMessage">任务基本信息</a>
+    </div>
+    <div class="content clearfix">
+        <div class="nt-left-view">
+            <ul ng-model="items" ui-sortable="sortableOptions" class="nt-lv-ph">
+                <p class="nt-lvph-title" title={{task.title}}>{{task.title}}</p>
+                <p class="nt-lvph-detail">
+                    任务个数{{task.num}}&nbsp个&nbsp|&nbsp{{task.end_time.substr(11,5)}}&nbsp截止&nbsp|&nbsp最长审核&nbsp{{reviewTimeDay}}&nbsp天</p>
+                <p class="nt-lvph-rightPrice">￥{{task.amount/2}}</p>
+                <pre class="summary-detail" ng-bind-html="showTaskDesc"></pre>
+                <a href="" class="share-price">分享赚{{0.1+0.9+task.amount*0.1+ 1*task.share_award | number:2}}元</a>
+                <a href="" class="get-task-price">领取任务赚{{task.amount/2}}元</a>
+            </ul>
+        </div>
+        <div class="nt-right-view">
+            <div class="nt-rv-title">
+                <label for="ntRvTitleInput">任务标题:</label>
+                <input ng-model="task.title" name="title" style="" id="ntRvTitleInput">
+            </div>
+            <div class="nt-rv-taskCount">
+                <label for="ntRvtcInput">任务个数:</label>
+                <input ng-model="task.num" name="title" style="" id="ntRvtcInput">
+            </div>
+            <div class="nt-rv-timePicker">
+                <label for="start">有效期:</label>
+                <input ngc-lay-date type="text" id="start" ng-model="task.start_time"/>
+                <label for="end">至</label>
+                <input ngc-lay-date type="text" id="end" ng-model="task.end_time"/>
+            </div>
+            <div class="nt-rv-price">
+                <label for="price">单价(元):</label>
+                <input type="text" id="price" ng-model="task.amount"/>
+                <a href="" ng-click="showPriceDesc()" id="showPriceDesc">费率说明
+                    <div class="price-desc" ng-show="priceDesc">若想显示3.5请填写7
+                    </div>
+                </a>
+
+            </div>
+            <div class="nt-rv-sharePrice">
+                <label for="sharePrice">分享奖励(元):</label>
+                <input type="text" id="sharePrice" ng-model="task.share_award"/>
+                <a href="" ng-click="showOtherShareItem()" id="showOtherShareItem">更多</a>
+            </div>
+            <div class="nt-rv-sharePrice" ng-show="showShareOther">
+                <label for="shareTitle">分享标题:</label>
+                <input type="text" id="shareTitle" ng-model="task.share_title" style="width: 323px"/>
+            </div>
+            <div class="nt-rv-sharePrice" ng-show="showShareOther">
+                <label for="shareContent">分享内容:</label>
+                <input type="text" id="shareContent" ng-model="task.share_content" style="width: 323px"/>
+            </div>
+            <div class="nt-rv-sharePrice" ng-show="showShareOther">
+                <label for="shareIcon">分享图片链接:</label>
+                <input type="text" id="shareIcon" ng-model="task.share_icon" style=" width: 298px;"/>
+            </div>
+            <div class="nt-rv-reviewTime">
+                <label for="reviewTime">最长审核时间(小时):</label>
+                <input type="text" id="reviewTime" ng-change="changeReviewTime()" ng-model="task.max_check_time"/>
+            </div>
+            <div class="nt-rv-summary">
+                <label for="summary">任务简介</label>
+                <textarea name="summary" id="summary" cols="30" rows="10" ng-model="task.desc"
+                          ng-change='changeShowTaskDesc()'></textarea>
+            </div>
+            <div class="nt-rv-userGetTime">
+                <label for="userGetTime">用户领取时间(小时)</label>
+                <input type="text" id="userGetTime" ng-model="task.max_submit_time"/>
+            </div>
+            <div class="nt-rv-maxSubCount">
+                <label for="maxSubCount">最大提交次数</label>
+                <input type="text" id="maxSubCount" ng-model="task.max_submit"/>
+            </div>
+            <div class="nt-rv-showArea">
+                <label for="showArea">显示区域:</label>
+                <select id="showArea" ng-model="showArea" ng-options="item.value for item in areaItems">
+                    <option value="">{{currentArea}}</option>
+                </select>
+            </div>
+            <div class="nt-rv-lineVersion">
+                <label for="lineVersion">上线版本:</label>
+                <select id="lineVersion"
+                        ng-change="changeLineVersion()"
+                        ng-model="lineVersion" ng-options="item.version for item in versionItems">
+                    <!--<option value="" ng-show="task.android_version">{{'android'+task.android_version}}</option>-->
+                    <option value="">{{deviceType}}</option>
+                </select>
+            </div>
+            <div class="nt-rv-taskTag">
+                <label for="taskTag">任务分类:</label>
+                <select id="taskTag"
+                        ng-change="changeTag()"
+                        ng-model="taskTag" ng-options="item.tagItem for item in tagItems">
+                    <!--<option value="" ng-show="task.android_version">{{'android'+task.android_version}}</option>-->
+                    <option value="">{{tagType}}</option>
+                </select>
+            </div>
+            <div class="nt-rv-poiid" style="margin-top: 8px" ng-show="showLineDown">
+                <label for="poiId">POI_ID:</label>
+                <input type="text" id="poiId" ng-model="task.poi_id" style="margin-left: 20px"/>
+            </div>
+            <div class="nt-rv-maxDistance" style="margin-top: 8px" ng-show="showLineDown">
+                <label for="shortDesc">有效领取距离(米):</label>
+                <input type="text" id="maxDistance" ng-model="task.max_distance"/>
+            </div>
+            <div class="nt-rv-shortDesc" style="margin-top: 8px" ng-show="showLineDown">
+                <label for="shortDesc">简短描述:</label>
+                <input type="text" id="shortDesc" ng-model="task.short_desc"/>
+            </div>
+        </div>
+    </div>
+    <div class="nt-footer">
+        <div class="btn-area">
+            <a href="" class="save-page" ng-click="ntSavePage()">保存本页</a>
+            <a href="" class="pre-page" ng-click="ntPrePage()">上一项</a>
+            <a href="" class="next-page" ng-click="ntNextPage()">下一项</a>
+        </div>
+    </div>
+</div>

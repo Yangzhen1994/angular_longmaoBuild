@@ -1,0 +1,15 @@
+<link rel="stylesheet" href="./css/imgProof.css">
+<div class="img-proof">
+    <div class="img-proof-wrap">
+        <span>{{imgdesc}}</span>
+        <div class="up-img-proof" id="{{'upImgProof'+stepIndex+$index}}"></div>
+        <div class="up-img-proof-list" id="{{'upImgProofList'+stepIndex+$index}}"></div>
+        <div class="up-img-proof-preview" id="{{'upImgProofPreview'+stepIndex+$index}}"></div>
+        <div class="img-proof-tips-image" ng-show="componentItem.tips_image">
+            <img ng-src="{{componentItem.tips_image}}" alt="">
+        </div>
+        <img class="img-proof-rectangle" src="./img/moduleImg/rectangle.png" alt="">
+        <img class="img-proof-del" src="./img/icon/delete_circle.png" alt="" id="{{'delete'+$index}}">
+    </div>
+</div>
+  

@@ -1,0 +1,146 @@
+.reviewDetail_detail#reviewId{
+    display: block;
+    font-family: PingFangSC-Regular;
+    font-size: 13px;
+    color: #000000;
+    line-height: 18px;
+    height: 18px;
+    position: absolute;
+    top: 11px;
+    left: 90px;
+}
+.progress{z-index: 2000}
+.mask{position: fixed;top: 0;right: 0;bottom: 0;left: 0; z-index: 1000; background-color: #2F2F2F}
+#breadTaskList{
+    color: rgba(0,0,0,0.54);
+}
+.review-detail-export{
+    color:#2DB7F5;
+    font-size: 15px;
+    font-family: PingFangSC-Regular;
+    position: absolute;
+    right: 850px;
+    top: 33px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.review-detail-import{
+    position: absolute;
+    right: 800px;
+    color: #2DB7F5;
+    font-size: 15px;
+    font-family: PingFangSC-Regular;
+    top: 33px;
+    cursor: pointer;
+}
+.search-input{
+    top:-5px;
+    right: 110px;
+    font-size: 16px;
+    padding-left: 10px;
+}
+.review-detail-search-area{
+    position: absolute;
+    top:22px;
+    right:14px;
+    width: 380px;
+    height: 50px;
+}
+
+.search-btn-review-detail{
+    border-radius:2px;
+    position: absolute;
+    border: none;
+    outline: none;
+    width: 93px;
+    height: 36px;
+    background: #009688;
+    color:#FFFFFF;
+    font-size: 14px;
+    line-height: 20px;
+    font-family: PingFangSC-Regular;
+    letter-spacing:0.5px;
+    right: 5px;
+}
+.review-detail-radio{
+    position: absolute;
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #212121;
+    right: 394px;
+    margin-top: 4px;
+}
+.review-detail-radio span{
+    opacity: 1;
+    padding-right: 6px;
+}
+.review-detail-radio span i{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #010101;
+    border-radius: 10px;
+    vertical-align: middle;
+    margin-right: 8px;
+    box-sizing: border-box;
+    font-size: 14px;
+    color: #212121;
+    margin-bottom: 3px;
+}
+.review-detail-radio span .chooseBg{
+    background: url(../img/green_circle.png) no-repeat;
+    background-size: 100%;
+    border:none;
+}
+/*所属用户*/
+#submitTime{
+    position: absolute;
+    top:28px;
+    right: 605px;
+    font-size: 15px;
+}
+
+.sel-sub-time{
+    border: none;
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+    margin-left: -50px;
+    font-family: PingFangSC-Regular;
+    font-size: 13px;
+    color: rgba(0,0,0,0.87);
+    line-height: 30px;
+    background: #ececec;
+    background-image: url(../img/triangle.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+
+}
+/*detail*/
+.review-detail-detail{
+    width: 100%;
+    height: calc(100% - 107px);/*____*/
+    margin: 0 auto;
+    margin-top: 50px;
+    background: white;
+}
+.tabs-header{
+    width: 100%;
+    height:56px;
+    border-bottom: 2px solid #ECECEC;
+}
+.tabs-header-1,.tabs-header-2,.tabs-header-3{
+    display: inline-block;
+    text-align: center;
+    height: 48px;
+    line-height: 56px;
+    color: #2DB7F5;
+    font-size: 13px;
+    width: 120px;
+    text-decoration: none;
+    color: rgba(0,0,0,0.54);
+}
+.tabs_header_selected{
+    color: #2DB7F5;
+    border-bottom:  8px solid #2DB7F5;
+}

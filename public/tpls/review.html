@@ -1,0 +1,92 @@
+<link rel="stylesheet" href="./css/review.css">
+<div  class="review"><!--ng-controller="firstPage"-->
+  <!--  <img id="progressImage" class="progress" style="display:none" alt="" src="../img/loading.gif"/>
+    <div id="maskOfProgressImage" class="mask" style="display:none"></div>-->
+    <div class="bread">
+        <a ng-click="returnToSelf()" ui-sref="reviewList" id="breadTaskList">审核列表<span>/</span></a>
+        <!-- <a ui-sref="parent.newTask">新建任务</a>-->
+    </div>
+    <div class="review-search-area">
+        <button class="search-btn-review" ng-click="reveiewSearch()">搜索</button>
+        <input type="text" class="search-Input" id="searchInput" ng-model="searchReviewContent">
+    </div>
+    <div class="review-radio">
+            <span ng-click="setChoose(1)">
+            <i class="circle-choose" ng-class="{chooseBg:chooseType == 1}"></i><span class="text">任务ID</span>
+		    </span>
+        <span ng-click="setChoose(2)">
+            <i class="circle-choose" ng-class="{chooseBg:chooseType == 2}"></i><span class="text">任务名称</span>
+		    </span>
+        <span ng-click="setChoose(3)">
+            <i class="circle-choose" ng-class="{chooseBg:chooseType == 3}"></i><span class="text">POI_ID</span>
+		</span>
+    </div>
+    <div class="detail-footer clearfix">
+        <div class="pagination-index">
+            <ul class="clearfix">
+                <li>共<span ng-bind="totalCount"></span>条记录，<span ng-bind="pageIndex"></span>/<span
+                        ng-bind="pageTotal"></span>页
+                </li>
+                <!--<li>
+                    <a class="pagination_page" href=" " ng-repeat="item in pageItem" ng-bind="item" ng-click="toPage(item, $event)"></ a>
+                </li>-->
+                <li class="pagination-prev"><a class="main-color" href="javascript:;"
+                                               ng-click="toPage(pageIndex-1,$event)" style="color: #2DB7F5">上一页</a></li>
+                <li class="pagination-next"><a class="main-color" href="javascript:;"
+                                               ng-click="toPage(+pageIndex+1,$event)" style="color: #2DB7F5">下一页</a>
+                </li>
+                <li class="pagination-sel-wrap">到第 <input class="pagination-sel" type="text" ng-model="goIndex"
+                                                          style="width: 20px"/> 页
+                </li>
+                <li><a href="javascript:;" class="pagination-goPage" ng-click="toPage(goIndex)" style="color: #2db7f5;">前往</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id='exportSubTime'>
+        <input type="text" ngc-lay-date class="export-submit-time" ng-model="exportSubmitTime" id="selSubTime"
+               placeholder="导出需要选择提交时间"/>
+    </div>
+    <div class="review-detail">
+        <!-- <h2>审核列表界面</h2>
+         <input ng-model="newtask"></input>
+         <div>{{newtask}}</div>-->
+        <ul id="reviewUl">
+            <li ng-repeat="item in items" ng-show="!item.show">
+                <div id="{{'review'+$index}}" ng-show="item.exportShow">
+                    <select class="export-state" ng-change="chooseState(item)"
+                            ng-model="item.exportItem"
+                            ng-options="itemselect.exportState for itemselect in exportStates"
+                    >
+                        <option value="">请选择</option>
+                    </select>
+                </div>
+                <div class="review-header">
+                    <div class="id">(编号{{item.id}})</div>
+                    <div class="title">{{item.title}}</div>
+                    <div class="export" ng-click="export(item,index)">导出</div>
+                    <div class="import"><label for="{{'importInput'+$index}}">导入</label></div>
+
+                    <form id="{{'totoroTaskCheckFileForm'+$index}}">
+                        <input style="display: none;" id="{{'importInput'+$index}}" type="file" name="data"
+                               onchange="angular.element(this).scope().file_upload(this)"
+                        >
+                    </form>
+
+                    <!--<input type="file" id="{{'impotInput'+$index}}" style="display:none"
+                    onchange="angular.element(this).scope().file_upload(this.files,this)"
+                    >-->
+
+                </div>
+                <div class="review-detail-detail">
+                    <span>任务状态:<span style="margin-right: 0;margin-left: 8px;">{{item.statustext.substr(-10,3)}}</span></span><span>完成程度:<span style="color:#4CAF50;margin-right: 0;margin-left: 8px;">{{oneAchieve}}</span>/{{item.num.split(';')[3]}}</span><span>下线时间:<span style=": 0;margin-left: 8px;">{{item.endTime}}</span></span><span>待审核数量:<span style="margin-right: 0;margin-left: 3px;">{{item.nocheck_nums}}</span></span>
+                </div>
+                <div class="review-button">
+                    <a class="first-button" ng-click="turnToReviewDetail($index)">审核</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+
+</div>

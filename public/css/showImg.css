@@ -1,0 +1,80 @@
+.show-img{
+    width: 285px;
+    height: 111px;
+    /*background: #D8D8D8;*/
+
+    position: relative;
+    text-align: center;
+    line-height: 111px;
+    border-bottom: 5px solid #f2f2f2;
+
+}
+.upImg{
+    width: 315px;
+    height: 150px;
+    border-radius: 5px;
+    background: white;
+    position: absolute;
+    top:0;
+    left: 300px;
+    visibility: hidden;
+}
+.upImg img{
+    width: 36px;
+    height: 36px;
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 50px;
+}
+#upFileLabel{
+    position: absolute;
+    left: 130px;
+}
+#upFile{
+    border: none;
+    background: white;
+}
+
+
+
+/*上传区域*/
+
+
+
+.progress {
+    line-height: 15px;
+}
+
+.progress {
+    display: inline-block;
+    width: 100px;
+    border: 3px groove #CCC;
+    height: 15px;
+}
+
+.progress div {
+    font-size: smaller;
+    background: orange;
+    width: 0;
+}
+
+
+section{
+    position: absolute;
+    width: 300px;
+    top:0;
+    left: 300px;
+    background: white;
+    height: 70px;
+    padding-top:40px;
+    visibility: hidden;
+}
+
+
+/*添加步骤样式*
+/
+ */
+
+.step-img{
+    width: 100px;
+}

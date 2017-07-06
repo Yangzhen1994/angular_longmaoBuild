@@ -1,0 +1,19 @@
+{
+  "curly": true,
+  "eqeqeq": true,
+  "eqnull": true,
+  "expr" : true,
+  "immed": true,
+  "newcap": true,
+  "noempty": true,
+  "noarg": true,
+  "regexp": true,
+  "browser": true,
+  "devel": true,
+  "node": true,
+  //不能使用未定义的变量
+  "undef": true,
+  //语句后面必须有分号
+  "asi": false,
+  "boss": false
+}
